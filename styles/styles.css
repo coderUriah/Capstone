@@ -1,0 +1,1074 @@
+/*
+
+~~~ TLM's Capstone Project by Kinning Jefferson ~~~
+
+~~ presenting Curry Island (a food ordering app) ~~
+
+~~~~ January 2023, CSP San Quentin, California ~~~~
+
+*/
+
+/* Universal styles/classes */
+/* ~~~~~~~~~~~~~~~~~~~~~~~  */
+:root {
+  --primaryColor: gold;
+  --secondaryColor: indianred;
+  --mainFont: "Bodoni 72";
+  --secondaryFont: serif;
+  --mainFontColor: black;
+  --seeThroughBackdrop: brightness(0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  color: var(--primaryColor);
+}
+
+a:hover {
+  color: black;
+  text-decoration-line: underline;
+}
+
+.flexed-out {
+  display: flex;
+}
+
+/* Body Styles */
+/* ~~~~~~~~~~~ */
+
+body {
+  height: 100vh;
+  min-width: 400px;
+}
+
+.wrapper {
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Nav styles  */
+/* ~~~~~~~~~~  */
+
+.navbar {
+  background-color: var(--secondaryColor)!important;
+}
+
+.navbar-brand {
+  color: var(--primaryColor)!important;
+  font-family: var(--mainFont);
+}
+
+.nav-link,
+.navbar-light,
+.navbar-nav
+ {
+  color: var(--primaryColor)!important;
+}
+
+.nav-link:hover {
+  color: black!important;
+}
+
+.navbar-toggler:hover {
+  background-color: var(--primaryColor);
+  outline: transparent!important;
+}
+
+.navbar-toggler:focus {
+  outline: transparent!important;
+}
+
+/* First parent styles */
+/* ~~~~~~~~~~~~~~~~~~  */
+
+.first-parent {
+  position: relative;
+  top: 4em;
+}
+
+/* Left child styles */
+/* ~~~~~~~~~~~~~~~~  */
+
+.left-child {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  height: 24em;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--primaryColor);
+  border-top: none;
+  border-right: none;
+  border-bottom-left-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+/* Main info cube */
+/* ~~~~~~~~~~~~~  */
+
+.cube-1 {
+  align-items: center;
+  height: 28vh;
+  display: flex;
+  justify-content: center;
+  backface-visibility: visible;
+  perspective-origin: 150% 150%;
+  transform-style: preserve-3d;
+  position: relative;
+  right: 13px;
+}
+
+.face-1 {
+  display: block;
+  position: absolute;
+  width: 21em;
+  height: 20em;
+  border: none;
+  color: #302c28;
+  text-align: center;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.front-1 {
+  background: var(--primaryColor);
+  transform: translateZ(10.5em);
+}
+
+.back-1 {
+  background: linear-gradient(96deg, var(--primaryColor), transparent);
+  color: black;
+  transform: rotateY(180deg) translateZ(10em);
+}
+
+.right-1 {
+  background: linear-gradient(96deg, var(--primaryColor), transparent);
+  transform: rotateY(90deg) translateZ(10.5em);
+}
+
+.left-1 {
+  background: linear-gradient(96deg, var(--primaryColor), transparent);
+  transform: rotateY(-90deg) translateZ(10.5em);
+}
+
+.top-1 {
+  background: linear-gradient(96deg, var(--primaryColor), transparent);
+  transform: rotateX(90deg) translateZ(10em);
+}
+
+.bottom-1 {
+  background: linear-gradient(96deg, var(--primaryColor), transparent);
+  transform: rotateX(-90deg) translateZ(10em);
+}
+
+.info-div {
+  filter: drop-shadow(2px 4px 6px black);
+  border-radius: 16px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primaryColor);
+  width: 22em;
+  height: 28em;
+  padding: 20px;
+}
+
+.info-sub-text {
+  font-variant: all-petite-caps;
+  font-style: italic;
+}
+
+.info-title-text {
+  font-family: var(--mainFont);
+}
+
+.info-para-text {
+  text-align: center;
+  font-family: var(--secondaryFont);
+}
+
+ button {
+  cursor: pointer;
+  color: black;
+  border: none;
+  background-color: var(--primaryColor);
+  padding: 7px;
+  border-radius: 16px;
+  font-style: italic;
+  height: 4em;
+}
+
+ button:hover {
+  color: var(--primaryColor);
+  background-color: var(--secondaryColor);
+}
+
+button:focus {
+  outline: none;
+}
+
+#order-btn {
+  color: black;
+  border: 1px solid black;
+}
+
+#order-btn:hover {
+  color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+  background-color: black;
+}
+
+/* Right child styles */
+/* ~~~~~~~~~~~~~~~~~  */
+
+.right-child {
+  filter: drop-shadow(2px 4px 6px black);
+  position: relative;
+  z-index: 0;
+  right: 0;
+  width: 100em;
+  height: 51vh;
+}
+
+.img-container {
+  width: 100%;
+  height: 51vh;
+}
+
+.img-fluid {
+  border-radius: 16px;
+}
+
+/* Second parent styles */
+/* ~~~~~~~~~~~~~~~~~~~  */
+
+.second-parent {
+  flex-direction: row-reverse;
+  height: 10vh;
+  width: 100%;
+  position: relative;
+  top: -26em;
+}
+
+/* Who we are cube styles */
+/* ~~~~~~~~~~~~~~~~  */
+
+.who-header {
+  position: relative;
+  z-index: 11;
+  width: 25%;
+  background-color: var(--secondaryColor);
+  height: 30vh;
+  border-radius: 16px;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.pomm {
+  perspective-origin: 50% 50%;
+}
+
+.cube-2-border {
+  border: 2px solid var(--secondaryColor);
+  height: 26em;
+  width: 19em;
+  position: relative;
+  z-index: 2;
+  left: 44em;
+  top: -6em;
+  border-left: none;
+  border-top: none;
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.cube-2 {
+  align-items: center;
+  height: 28vh;
+  display: flex;
+  justify-content: center;
+  backface-visibility: visible;
+  perspective-origin: 150% 150%;
+  transform-style: preserve-3d;
+  position: relative;
+  right: 145px;
+  z-index: 2;
+}
+
+.face-2 {
+  display: block;
+  position: absolute;
+  width: 4em;
+  height: 304px;
+  border: none;
+  line-height: 100px;
+  font-variant: petite-caps;
+  font-size: 4.25rem;
+  color: #302c28;
+  text-align: center;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.front-2 {
+  background: var(--secondaryColor);
+  transform: translateZ(169px);
+}
+
+.back-2 {
+  background: linear-gradient(96deg, var(--secondaryColor), transparent);
+  color: black;
+  transform: rotateY(180deg) translateZ(2em);
+}
+
+.right-2 {
+  background: linear-gradient(96deg, var(--secondaryColor), transparent);
+  transform: rotateY(90deg) translateZ(2em);
+}
+
+.left-2 {
+  background: linear-gradient(96deg, var(--secondaryColor), transparent);
+  transform: rotateY(-90deg) translateZ(2em);
+}
+
+.top-2 {
+  background: linear-gradient(96deg, var(--secondaryColor), transparent);
+  transform: rotateX(90deg) translateZ(150px);
+}
+
+.bottom-2 {
+  background: linear-gradient(96deg, var(--secondaryColor), transparent);
+  transform: rotateX(-90deg) translateZ(152px);
+}
+
+.br {
+  border-radius: 16px;
+}
+
+.who-title-text {
+  font-family: var(--mainFont);
+  position: relative;
+  top: 43px;
+  font-size: 65px;
+  height: 4em;
+  text-align: center;
+  padding: 13px;
+}
+
+.who-info-parent {
+  filter: drop-shadow(2px 4px 6px black);
+  justify-content: center;
+  background-color: black;
+  width: 100%;
+  height: 29.4em;
+  position: relative;
+  top: 13em;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+#whoImage {
+  width: 1100px;
+  height: 450px;
+  position: relative;
+  top: 12px;
+  border-radius: 16px;
+}
+
+.info-child {
+  width: 33%;
+  justify-content: center;
+}
+
+/* Third parent styles */
+/* ~~~~~~~~~~~~~~~~~~  */
+
+.third-parent {
+  filter: drop-shadow(2px 4px 6px black);
+  height: 26em;
+  width: 100%;
+}
+
+/* Our vision cube styles */
+/* ~~~~~~~~~~~~~~~~~~~~~  */
+
+.cube-3-border {
+  border: 2px solid var(--primaryColor);
+  height: 20em;
+  width: 20em;
+  position: relative;
+  bottom: -12em;
+  z-index: 0;
+  border-top: none;
+  border-right: none;
+  border-bottom-left-radius: 16px;
+  border-top-left-radius: 16px;
+}
+
+.cube-3 {
+  align-items: center;
+  height: 28vh;
+  display: flex;
+  justify-content: center;
+  backface-visibility: visible;
+  perspective-origin: 150% 150%;
+  transform-style: preserve-3d;
+  position: relative;
+  left: 9.5em;
+  top: -9em;
+}
+
+.face-3 {
+  display: block;
+  position: absolute;
+  width: 4em;
+  height: 304px;
+  border: none;
+  line-height: 100px;
+  font-variant: petite-caps;
+  font-size: 4.25rem;
+  color: #302c28;
+  text-align: center;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.front-3 {
+  background: var(--primaryColor);
+  transform: translateZ(153px);
+}
+
+.back-3 {
+  background: linear-gradient(96deg, var(--primaryColor), transparent);
+  color: black;
+  transform: rotateY(180deg) translateZ(153px);
+}
+
+.right-3 {
+  background: linear-gradient(96deg, var(--primaryColor), transparent);
+  transform: rotateY(90deg) translateZ(2em);
+}
+
+.left-3 {
+  background: linear-gradient(96deg, var(--primaryColor), transparent);
+  transform: rotateY(-90deg) translateZ(2em);
+}
+
+.top-3 {
+  background: linear-gradient(96deg, var(--primaryColor), transparent);
+  transform: rotateX(90deg) translateZ(153px);
+}
+
+.bottom-3 {
+  background: linear-gradient(96deg, var(--primaryColor), transparent);
+  transform: rotateX(-90deg) translateZ(152px);
+}
+
+/* Our vision parent styles */
+/* ~~~~~~~~~~~~~~~~~~~~~~~  */
+
+.our-vision-parent {
+  width: 100%;
+  border: 2px solid var(--secondaryColor);
+  border-left: none;
+  border-top: none;
+}
+
+/* Our vision card styles */
+/* ~~~~~~~~~~~~~~~~~~~~~  */
+
+.our-vision-cards {
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.card {
+  height: 22em;
+  margin-top: 28px;
+}
+
+.card-body {
+  flex-direction: column;
+  justify-content: end;
+  color: black;
+  padding: 8px;
+}
+
+.card-title {
+  padding: 8px;
+}
+
+.card-text {
+  padding: 8px;
+}
+
+.backdrop {
+  backdrop-filter: var(--seeThroughBackdrop);
+}
+
+/* Footer styles  */
+/* ~~~~~~~~~~~~~  */
+
+.page-footer {
+  margin-top: 10px;
+  justify-content: center;
+  background-color: var(--secondaryColor);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  height: 20em;
+}
+
+.footer-boxes {
+  width: 33%;
+}
+
+.box-one {
+  padding: 30px;
+}
+
+.box-two {
+  flex-direction: column;
+  align-items: center;
+}
+
+.box-three {
+  justify-content: center;
+}
+
+.bottom-links {
+  padding-bottom: 15px;
+}
+
+.bottom-links:hover {
+  color: var(--primaryColor);
+}
+
+.footer-contact-icons {
+  justify-content: space-evenly;
+  height: 8em;
+  align-items: center;
+  font-size: 35px;
+}
+
+.icons:hover {
+  cursor: pointer;
+  color: var(--primaryColor);
+}
+
+/* Keyframe */
+/* ~~~~~~~~ */
+
+@keyframes rotateCube
+{
+  from
+  
+    { transform: rotate3d(4, 1, 1, 0deg); }
+  to
+  
+    { transform: rotate3d(4, 10, 1, 360deg); }
+}
+
+/* Menu Page Styles */
+/* ~~~~~~~~~~~~~~~  */
+
+.menu-parent {
+  justify-content: space-between;
+  border: 2px solid var(--primaryColor);
+  border-top: none;
+  border-right: none;
+  border-bottom-left-radius: 16px;
+  border-top-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  padding-bottom: 10px;
+}
+
+.menu-card {
+  margin-left: 10px;
+  margin-top: 8px;
+  flex-direction: row;
+  border-left: none;
+  border-top: none;
+  border-color: var(--primaryColor);
+}
+
+.menu-img {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Order status parent styles */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~  */
+
+.order-preview-parent {
+  border: 2px solid var(--primaryColor);
+  border-left: none;
+  border-top: none;
+  border-bottom: none;
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+  padding-right: 13px;
+  padding-left: 16px;
+}
+
+#previewItemName {
+  list-style: none;
+}
+
+#previewPriceParent {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  list-style: none;
+}
+
+#proceedChkOut {
+  display: flex;
+  flex-direction: column;
+}
+
+#proceed-btn {
+  font-style: none;
+}
+
+#removeBtn {
+  height: 25px;
+  padding: 0;
+  width: 10em;
+}
+
+.tiny-size-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.chkOut-form {
+  height: 14em;
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+}
+
+.scroller {
+  height: 52em;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+label{
+  margin: 0;
+}
+
+.payment-parent {
+  border: 1px solid gray;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+.payment-methods-ul {
+  justify-content: space-evenly;
+}
+
+.credit-card-form {
+  flex-direction: column;
+  align-items: center;
+}
+
+.paypal-form {
+  flex-direction: column;
+  align-items: center;
+}
+
+#popUp {
+  display: none;
+}
+
+input{
+  border-radius: 4px;
+}
+
+input:focus {
+  background-color: whitesmoke;
+}
+
+.close {
+  background-color: gold!important;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  font-style: normal;
+}
+
+.table th {
+  padding: 0.35rem;
+}
+
+.menu-page-title {
+  text-align: center;
+  font-family: var(--mainFont);
+  text-decoration-line: underline;
+}
+
+.menu-card-price {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+/* iPad Pro viewport width */
+/* ~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media screen and (max-width: 1024px){
+  
+  /* Menu page */
+  /* ~~~~~~~~~ */
+  
+  .menu-parent {
+    justify-content: space-between;
+  }
+  
+  #menu-parent-left {
+    width: 50%;
+  }
+  
+  .menu-card {
+    flex-direction: column;
+    width: 29rem!important;
+    height: 20em!important;
+  }
+  
+  .menu-img {
+    height: 9em;
+  }
+  
+  .menu-card-title {
+    margin-bottom: -0.5rem!important;
+    font-size: 21px;
+  }
+
+  
+  .menu-card-text {
+    font-size: 16px!important;
+  }
+  
+  p{
+    margin-bottom: 0;
+  }
+  
+  .add-btn {
+    height: 2em;
+    padding: 7px;
+  }
+  
+  .img-fluid {
+    width: 14em!important;
+  }
+  
+  .order-preview-parent {
+    width: 21em;
+  }
+  
+  /* Home page */
+  /* ~~~~~~~~~ */
+  
+  .first-parent {
+    flex-direction: column-reverse;
+    position: unset;
+  }
+  
+  .burger-img-home {
+    width: 51.5em!important;
+    margin-top: 1em;
+  }
+  
+  .left-child {
+    width: 100%;
+    border: none;
+    height: 7em;
+  }
+
+  .right-child {
+    width: 58em;
+    text-align: center;
+  }
+  
+  .cube-1 {
+    align-items: flex-end;
+    height: 0;
+    position: unset;
+  }
+  
+  .who-info-parent {
+    top: 22em;
+    height: 33em;
+  }
+  
+  #whoImage {
+    width: 915px;
+    height: 503px;
+  }
+  
+  .wrapper {
+    overflow-x: clip!important;
+  }
+  
+  .cube-2 {
+    display: none;
+  }
+  
+  .cube-2-border {
+    display: none;
+  }
+  
+  .our-vision-parent {
+    justify-content: flex-end;
+    height: 40em;
+  }
+  
+  .our-vision-cards {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .vision-card {
+    height: 10em!important;
+    width: 36em;
+  }
+  
+  .third-parent {
+    height: 40em;
+    position: relative;
+    top: 5em;
+  }
+  
+  .page-footer {
+    margin-top: 6em;
+  }
+}
+
+
+/* iPhone X viewport width */
+/* ~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media screen and (max-width: 400px){
+  
+  body {
+    display: inline;
+  }
+  
+  .wrapper {
+    overflow: scroll;
+    overflow-x: clip;
+  }
+  
+  .menu-parent {
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+  
+  #menu-parent-right {
+    width: 19em!important;
+  }
+  
+  .menu-card {
+    width: 18rem!important;
+    height: 25rem!important;
+  }
+  
+  .add-btn {
+    height: 2.5em;
+    width: 10em;
+    padding: 0;
+  }
+  
+  .img-fluid {
+    height: 205px!important;
+  }
+  
+  .order-preview-parent {
+    display: inline;
+     width: 22em;
+    border: none;
+    padding-left: 1em;
+  }
+
+  .ft-size-pad {
+    font-size: 15px;
+    padding-left: 8px;
+  }
+
+  .preview-header-parent {
+    padding-left: 8px;
+  }
+
+  .page-footer {
+    height: 52vh;
+    position: relative;
+    top: 9em;
+  }
+
+  .box-two {
+    justify-content: space-between;
+  }
+
+  .footer-contact-icons {
+    height: 16em;
+    font-size: 19px
+  }
+
+  #proceed-btn {
+    width: 75%;
+    align-self: center;
+  }
+
+  .container {
+    display: inline-block!important;
+  }
+
+  .first-parent {
+    flex-direction: column-reverse;
+    position: unset;
+  }
+
+  .burger-img-home {
+    width: 92vw!important;
+    height: 28vh!important;
+  }
+
+  .right-child {
+    margin-top: 10px;
+    height: 45vh;
+    width: 100%;
+  }
+
+  .left-child {
+    width: 100%;
+    height: 22em;
+  }
+
+  .cube-1 {
+    position: unset;
+  }
+  
+  .face-1 {
+    width: 20em;
+  }
+  
+  .info-para-text {
+    padding: 14px;
+  }
+  
+  .info-title-text {
+    font-size: 2rem;
+  }
+
+  .face-2 {
+    width: 4em;
+    height: 2em;
+  }
+
+  .second-parent {
+    height: 40vh;
+  }
+
+  .cube-2 {
+    height: 20vh;
+    right: 176px;
+    bottom: -16em;
+    display: flex;
+  }
+
+  .cube-2-border {
+    left: 1em;
+    border-bottom: none;
+    height: 30em;
+    z-index: 0;
+  }
+
+  .who-title-text{
+    font-size: 50px;
+    padding: 0;
+  }
+
+  #whoImage {
+    height: 9em;
+    width: 20em;
+  }
+
+  .who-info-parent {
+    height: 10.5em;
+    top: 26em;
+  }
+
+  .cube-3-border {
+    bottom: 8em;
+    height: 8em;
+    border-bottom: none;
+  }
+
+  .cube-3 {
+    left: 10.5em;
+    top: -24.5em;
+  }
+
+  .third-parent {
+    position: relative;
+    bottom: 26em;
+    height: 75vh;
+  }
+
+  .face-3 {
+    width: 4em;
+    height: 2em;
+  }
+
+  .our-vision-parent {
+    justify-content: center;
+    height: 54em;
+    margin-top: -6px;
+    position: relative;
+    bottom: 12em;
+  }
+
+  .our-vision-cards {
+    width: 95%;
+    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: -20px;
+    height: 54em;
+  }
+
+  .vision-card {
+    height: 16em!important;
+    width: 17em;
+  }
+
+  .vision-body {
+    text-align: center;
+  }
+  
+  .card-text {
+    padding: 0;
+  }
+  
+  .footer-contact-icons {
+    height: 10%;
+  }
+  
+  #order-btn {
+    margin-top: -10px;
+  }
+  
+  .table {
+    font-size: 16px;
+  }
+
+  .col-sm-3 {
+    padding-left: 25px;
+  }
+
+  
+}

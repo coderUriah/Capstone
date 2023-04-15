@@ -1,0 +1,233 @@
+<!--
+
+~~~ TLM's Capstone Project by Kinning Jefferson ~~~
+
+~~ presenting Curry Island (a food ordering app) ~~
+
+~~~~ January 2023, CSP San Quentin, California ~~~~
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Curry Island | Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../styles/styles.css">
+  <link rel="shortcut icon" href="../images/curryIslandLogo.png">
+</head>
+<body>
+  <!-- wrapper -->
+  <div class="wrapper container">
+    <!-- top nav -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light br">
+      <a class="navbar-brand">Curry Island</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-ul-parent" aria-controls="navbar-ul-parent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-ul-parent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" id="nav-home">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item" id="nav-menu">
+            <a class="nav-link" href="">Browse Menu</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- menu parent container -->
+    <h1 class="menu-page-title">Our Menu</h1>
+    <div class="menu-parent flexed-out">
+      <!-- left side -->
+      <div id="menu-parent-left">
+        <!-- burger card -->
+        <div class="card menu-card br" style="width: 39rem;">
+          <img class="card-img-top img-fluid menu-img" style="width: 404px;" src="" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title menu-card-title"></h5>
+            <p class="card-text menu-card-text"></p>
+            <div class="flexed-out" style="justify-content: space-between">
+              <p class="card-text menu-card-price" style="margin-bottom: 8px;"></p>
+              <button class="burger-btn add-btn">Add to order</button>
+            </div>
+          </div>
+        </div>
+        <!-- chicken card -->
+        <div class="card menu-card br" style="width: 39rem;">
+          <img class="card-img-top img-fluid menu-img" style="width: 404px;" src="" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title menu-card-title"></h5>
+            <p class="card-text menu-card-text"></p>
+            <div class="flexed-out" style="justify-content: space-between">
+              <p class="card-text menu-card-price" style="margin-bottom: 8px;"></p>
+              <button class="chicken-btn add-btn">Add to order</button>
+            </div>
+          </div>
+        </div>
+        <!-- lamb card -->
+        <div class="card menu-card br" style="width: 39rem;">
+          <img class="card-img-top img-fluid menu-img" style="width: 404px;" src="" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title menu-card-title"></h5>
+            <p class="card-text menu-card-text"></p>
+            <div class="flexed-out" style="justify-content: space-between">
+              <p class="card-text menu-card-price" style="margin-bottom: 8px;"></p>
+              <button class="lamb-btn add-btn">Add to order</button>
+            </div>
+          </div>
+        </div>
+        <!-- seafood card -->
+        <div class="card menu-card br" style="width: 39rem;">
+          <img class="card-img-top img-fluid menu-img" style="width: 404px;" src="" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title menu-card-title"></h5>
+            <p class="card-text menu-card-text"></p>
+            <div class="flexed-out" style="justify-content: space-between">
+              <p class="card-text menu-card-price" style="margin-bottom: 8px;"></p>
+              <button class="seafood-btn add-btn">Add to order</button>
+            </div>
+          </div>
+        </div>
+        <!-- island starter card -->
+        <div class="card menu-card br" style="width: 39rem;">
+          <img class="card-img-top img-fluid menu-img" style="width: 404px;" src="" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title menu-card-title"></h5>
+            <p class="card-text menu-card-text"></p>
+            <div class="flexed-out" style="justify-content: space-between">
+              <p class="card-text menu-card-price"></p>
+              <button class="starter-btn add-btn">Add to order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- right side -->
+      <div id="menu-parent-right">
+        <!-- order preview parent container -->
+        <section class="order-preview-parent">
+          <div class="preview-header-parent">
+            <h1>Order Preview</h1>
+            <p>Keep track of what you have selected as you build your order.</p>
+          </div>
+          <div id="preview-order-text" style="font-size: 16px; padding: 6px;">
+            <table class="table">
+              <thead>
+                <th></th><!-- space holder -->
+                <th>Item</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>SubTotal</th>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <div id="proceedChkOut">
+            <ul id="previewPriceParent">
+              <li class="ft-size-pad"><b>Price before fees & taxes</b></li>
+              <li id="previewPrice">$0.00</li>
+            </ul>
+            <!-- button that triggers checkout modal -->
+            <button id="proceed-btn" style="font-style:normal;">Proceed to Checkout</button>
+          </div>
+        </section>
+      </div>
+      <!-- checkout modal -->
+      <div class="modal" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="confirmOrder"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content scroller">
+            <div class="modal-header">
+              <h5 class="modal-title" id="confirmOrder">Checkout</h5>
+            </div>
+            <div class="modal-body">
+              <form class="chkOut-form">
+                <label for="orderName">Please Enter Name For Order</label>
+                <input type="text" id="orderName" name="orderName" data-name="Order Name" required>
+                <label for="orderEmail">Please Enter Email for Discounts and Promos <span style="font-weight: 200">( Optional  )</span></label>
+                <input type="email" id="orderEmail" name="orderEmail" data-name="Order Email">
+                <label for="orderCellNumber">Phone Number:  <span style="font-weight: 200">( To receive order confirmation number )</span></label>
+                <input type="tel" id="orderCellNumber" name="orderCellNumber" placeholder="###-###-####" data-name="Mobile Number" maxlength="12" required>
+              </form>
+                    <table class="table" id="modalTable">
+                      <thead>
+                        <th></th><!-- space holder -->
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>SubTotal</th>
+                      </thead>
+                      <tbody></tbody>
+                      <tfoot>
+                        <tr>
+                          <td colspan="4" class="text-right">Subtotal</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class="text-right">Tax (8.25%)</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td colspan="4" class="text-right">Grand Total</td>
+                          <td></td>
+                        </tr>
+                        
+                      </tfoot>
+                    </table>
+                  <div class="payment-parent">
+                    <h3 class="payment-title" style="text-align: center;">Payment</h3>
+                      <ul class="payment-methods-ul flexed-out" style="list-style: none;">
+                        <li class="payment-method-li">
+                          <label for="pay-method-1"><span class="fa fa-credit-card"></span></label>
+                          <input type="radio" id="cardPayMethod" name="payment-method-radio" value="credit"></li>
+                        <li class="payment-method-li">
+                          <label for="pay-method-2"><span class="fab fa-paypal"></span></label>
+                          <input type="radio" id="paypalPayMethod" name="payment-method-radio" value="paypal">
+                        </li>
+                      </ul>
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" id="modalCancelBtn" data-dismiss="modal"
+                style="font-style: normal;">Cancel</button>
+              <button type="button" class="btn btn-primary" id="submitOrder" style="font-style: normal;">Submit Order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer class="flexed-out page-footer">
+      <!-- footer box one -->
+      <div class="footer-boxes box-one">
+        <h1 style="font-family: 'Bodoni 72';">Curry Island</h1>
+        <p style="margin-top: -15px;">A pop-up restuarant.</p>
+        <ul style="list-style: none">
+          <li class="bottom-links"><a href="#">Return to top of page</a></li>
+          <li class="bottom-links"><a href="../html/menu.html">Browse Menu</a></li>
+        </ul>
+      </div>
+      <!-- footer box two -->
+      <div class="footer-boxes box-two flexed-out">
+        <div class="footer-contact-icons flexed-out">
+          <span class="fab fa-facebook icons" style="margin: 10px;"></span>
+          <span class="fab fa-instagram icons" style="margin: 10px;"></span>
+          <span class="fab fa-twitter icons" style="margin: 10px;"></span>
+          <span class="fab fa-snapchat icons" style="margin: 10px;"></span>
+        </div>
+        <h3 style="font-weight: 200;">&copy; 2022 Curry Island Inc.</h3>
+      </div>
+      <!-- footer box three -->
+      <div class="footer-boxes box-three"></div><!-- space holder -->
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js" integrity="sha512-UwcC/iaz5ziHX7V6LjSKaXgCuRRqbTp1QHpbOJ4l1nw2/boCfZ2KlFIqBUA/uRVF0onbREnY9do8rM/uT/ilqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha512-ldc1sPu1FZ8smgkgp+HwnYyVb1eRn2wEmKrDg1JqPEb02+Ei4kNzDIQ0Uwh0AJVLQFjJoWwG+764x70zy5Tv4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/js/bootstrap.min.js" integrity="sha512-8qmis31OQi6hIRgvkht0s6mCOittjMa9GMqtK9hes5iEQBQE/Ca6yGE5FsW36vyipGoWQswBj/QBm2JR086Rkw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../js/menuItems.js"></script>
+  <script src="../js/index.js"></script>
+</body>
+</html>
